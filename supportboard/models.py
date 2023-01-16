@@ -3,7 +3,16 @@ from django.contrib.auth.models import User
 
 
 class SupportRequest(models.Model):
+    STATUS_CHOICES = [
+        ('Active', 'Active'),
+        ('Waiting', 'Waiting'),
+        ('Done', 'Done'),
+    ]
     title = models.CharField(max_length=254)
     description = models.TextField()
     creation_date = models.DateTimeField(auto_now_add=True)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
+    status = models.CharField(max_length=254, choices=STATUS_CHOICES, default='Open')
+
+    def __str__(self):
+        return self.title

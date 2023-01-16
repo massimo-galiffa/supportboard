@@ -1,23 +1,21 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-
 from authy.forms import SignupForm, LoginForm
-from django.contrib.auth.models import User
-
-
-# Create your views here.
+from django.contrib.auth.models import User, Group
 
 
 def signup(request):
-    form = SignupForm
+    form = SignupForm()
     if request.method == 'POST':
         form = SignupForm(request.POST)
-
         if form.is_valid():
             user = User.objects.create_user(form.data["username"], form.data["email"], form.data["password"])
+            group = Group.objects.get(name=form.cleaned_data.get('group'))
+            user.groups.add(group)
             user.save()
-    return render(request, 'authy/login.html', {"form": form})
+            return redirect('login')
+    return render(request, 'authy/signup.html', {"form": form})
 
 
 @login_required
@@ -34,7 +32,7 @@ def de(request):
         user = authenticate(request, username=username, password=password)
         print(user)
         if user is not None:
-            login(request, user)
+            logged(request, user)
             return redirect('list')
         else:
             print(request, 'Username or password is incorrect')
@@ -42,6 +40,7 @@ def de(request):
 
 
 def logged(request):
+    form = LoginForm()
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -51,12 +50,8 @@ def logged(request):
             user = authenticate(request, username=username, password=password)
             print(user)
             if user is not None:
-                login(request, user)
                 return redirect('list')
-            else:
-                return render(request, 'authy/login.html', {'error': 'Username or password is incorrect'})
-    else:
-        form = LoginForm()
+
     return render(request, 'authy/login.html', {'form': form})
 
 
@@ -64,5 +59,3 @@ def logged(request):
 def loggout_user(request):
     logout(request)
     return redirect('login')
-
-

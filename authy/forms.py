@@ -11,6 +11,7 @@ class SignupForm(forms.ModelForm):
     email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'Email...'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Enter password...'}))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Re-enter password...'}))
+    group = forms.CharField(max_length=30, initial='Lernende', widget=forms.HiddenInput())
 
     class Meta:
         model = User
@@ -21,7 +22,5 @@ class SignupForm(forms.ModelForm):
 
 # Login form
 class LoginForm(forms.Form):
-    username = forms.CharField(label='Username')
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
-
-
+    username = forms.CharField(label='Username', required=True)
+    password = forms.CharField(label='Password', required=True, widget=forms.PasswordInput)

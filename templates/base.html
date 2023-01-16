@@ -1,0 +1,36 @@
+{% load bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="static/supportboard.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Board</title>
+    {% bootstrap_css %}
+</head>
+<body>
+  <nav>
+  <a href="/supportboard/list">Home</a>
+  <a href="/authy/login">Login</a>
+  <a href="/admin">Admin</a>
+  <a href="/supportboard/support">Create Post</a>
+</nav>
+   <div id="page-container">
+   <div id="content-wrap">
+  {% block content %}
+
+  {% endblock %}
+
+
+<footer id="footer">
+     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold" href="https://tie-international.com/">Tie-International</a>
+  </div>
+</footer>
+   </div>
+ </div>
+</body>
+</html>
