@@ -3,8 +3,9 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #ff0000;
+    background-color: rgba(0, 0, 0, 0);
     text-align: center;
 }
-
-
+.icon-color{
+  color: blue;
+}

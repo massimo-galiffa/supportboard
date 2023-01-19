@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f78d139c-7d2c-4fda-8c9a-0816a7dcd8f8" name="Changes" comment="logout function">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="f78d139c-7d2c-4fda-8c9a-0816a7dcd8f8" name="Changes" comment="probleme behoben + Edit Content">
+      <change afterPath="$PROJECT_DIR$/static/javascript/rainbow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authy/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authy/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authy/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/support28/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/support28/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/supportboard/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/supportboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/supportboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/supportboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/authy/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authy/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/authy/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/authy/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authy/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/signin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/static/supportboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/static/supportboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/supportboard/support_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supportboard/support_request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/static/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/static/supportboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/supportboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/supportboard/support_request_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supportboard/support_request_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/supportboard/support_request_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supportboard/support_request_list.html" afterDir="false" />
     </list>
@@ -41,6 +32,7 @@
         <option value="Python Script" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -68,6 +60,15 @@
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Git Projects\support28\static\css" />
+      <recent name="C:\Git Projects\support28\static\javascript" />
+      <recent name="C:\Git Projects\support28\static" />
+      <recent name="C:\Git Projects\support28" />
+      <recent name="C:\Git Projects\support28\templates\static" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="support28" type="Python.DjangoServer" factoryName="Django server">
       <module name="support28" />
@@ -115,7 +116,7 @@
       <workItem from="1673870605826" duration="524000" />
       <workItem from="1673911331182" duration="542000" />
       <workItem from="1674026800337" duration="21187000" />
-      <workItem from="1674112899790" duration="6341000" />
+      <workItem from="1674112899790" duration="22771000" />
     </task>
     <task id="LOCAL-00001" summary="Login + Basic SupportBoard">
       <created>1673348090785</created>
@@ -138,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673871115694</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="probleme behoben + Edit Content">
+      <created>1674120076168</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674120076168</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +166,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Login + Basic SupportBoard" />
     <MESSAGE value="logout function" />
-    <option name="LAST_COMMIT_MESSAGE" value="logout function" />
+    <MESSAGE value="probleme behoben + Edit Content" />
+    <option name="LAST_COMMIT_MESSAGE" value="probleme behoben + Edit Content" />
   </component>
 </project>

@@ -16,20 +16,27 @@
                            style="text-align: center; font-size: x-large">{{ support_request.creation_date }}</p>
                         <p class="card-text"
                            style="text-align: center; font-size: x-large">{{ support_request.creator }}</p>
-                        <a href="{% url 'delete' support_request.id %}" class="btn btn-danger mr-1 "
+                        <a href="{% url 'delete' support_request.id %}" class="btn mr-1 "
                            style="align-items: center"><i
-                                class="fas fa-trash-alt"></i></a>
-                        <a href="{% url 'update' support_request.id %}" class="btn btn-warning "
+                                class="fas fa-trash-alt rainbow-button"></i></a>
+                        <a href="{% url 'update' support_request.id %}" class="btn "
                            style="align-items: center"><i
-                                class="fas fa-pen"></i></a>
-                        <a href="{% url 'list' %}" class="btn btn-primary float-right text-right"
+                                class="fas fa-pen rainbow-button"></i></a>
+                        <a href="{% url 'list' %}" class="btn float-right text-right "
                            style="align-items: center"><i
-                                class="fas fa-sync"></i></a>
+                                class="fas fa-sync rainbow-button"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+   {% if is_berufsbildner %}
+    <div class="form-group">
+        <label for="assigned_trainer">Assigned trainer</label>
+        {{ form.assigned_trainer }}
+    </div>
+{% endif %}
+
 
 
 {% endblock %}

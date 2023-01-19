@@ -1,7 +1,9 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.views import View
 
 from supportboard.forms import SupportRequestForm
 from .models import SupportRequest
@@ -31,8 +33,11 @@ def support_request_list(request):
 def support_request_delete(request, id):
     id = int(id)
     support_request = SupportRequest.objects.get(id=id)
-    support_request.delete()
-    return redirect('list')
+    if support_request.creator == request.user or request.user.groups.filter(name='Berufsbildner').exists():
+        support_request.delete()
+        return redirect('list')
+    else:
+        return render(request, 'supportboard/support_request_detail.html', {'support_request': support_request})
 
 
 def support_request_detail(request, pk):
@@ -57,4 +62,13 @@ def update_support_request(request, pk):
     else:
         form = SupportRequestForm(instance=support_request)
     return render(request, 'supportboard/support_request.html', {'form': form})
+
+
+class group(View):
+    def get(self, request, *args, **kwargs):
+        form = SupportRequestForm()
+        return render(request, 'supportboard/support_request_detail.html', {'form': form})
+
+
+
 
