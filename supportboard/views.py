@@ -1,15 +1,13 @@
-from django.http import HttpResponseRedirect, request
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.views.generic import DetailView
 
-from .forms import SupportRequestForm
-from .models import SupportRequest
 from supportboard.forms import SupportRequestForm
-from django.contrib.auth.decorators import login_required
+from .models import SupportRequest
 
 
-@login_required(login_url='/authy/login')
+@login_required(login_url='/accounts/login')
 def support_request(request):
     if request.method == 'POST':
         form = SupportRequestForm(request.POST)
@@ -24,7 +22,7 @@ def support_request(request):
     return render(request, 'supportboard/support_request.html', {'form': form})
 
 
-@login_required(login_url='/authy/login')
+@login_required(login_url='/accounts/login')
 def support_request_list(request):
     support_requests = SupportRequest.objects.all()
     return render(request, 'supportboard/support_request_list.html', {'support_requests': support_requests})
@@ -47,3 +45,16 @@ def support_request_update(request, pk):
     support_request.save()
 
     return HttpResponseRedirect(reverse('list'))
+
+
+def update_support_request(request, pk):
+    support_request = SupportRequest.objects.get(id=pk)
+    if request.method == 'POST':
+        form = SupportRequestForm(request.POST, instance=support_request)
+        if form.is_valid():
+            form.save()
+            return redirect('list')
+    else:
+        form = SupportRequestForm(instance=support_request)
+    return render(request, 'supportboard/support_request.html', {'form': form})
+

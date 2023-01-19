@@ -10,17 +10,10 @@ class SignupForm(forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username..'}))
     email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'Email...'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Enter password...'}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Re-enter password...'}))
     group = forms.CharField(max_length=30, initial='Lernende', widget=forms.HiddenInput())
 
     class Meta:
         model = User
         fields = [
-            'first_name', 'last_name', 'username', 'email', 'password', 'password2'
+            'first_name', 'last_name', 'username', 'email', 'password'
         ]
-
-
-# Login form
-class LoginForm(forms.Form):
-    username = forms.CharField(label='Username', required=True)
-    password = forms.CharField(label='Password', required=True, widget=forms.PasswordInput)

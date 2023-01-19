@@ -1,9 +1,19 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="../static/supportboard.css">
+{% extends 'base.html' %}
 
-
-<form class="post-it" method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit" class="btn btn-primary">Save</button>
-</form>
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-4 mx-auto">
+                <h1 class="text-center">Support Request</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if error %}
+                        <p class="error">{{ error }}</p>
+                    {% endif %}
+                    <button type="submit" class="btn btn-primary btn-block">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

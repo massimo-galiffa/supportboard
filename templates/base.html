@@ -3,7 +3,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="static/supportboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,26 +16,37 @@
     {% bootstrap_css %}
 </head>
 <body>
-  <nav>
-  <a href="/supportboard/list">Home</a>
-  <a href="/authy/login">Login</a>
-  <a href="/admin">Admin</a>
-  <a href="/supportboard/support">Create Post</a>
-</nav>
-   <div id="page-container">
-   <div id="content-wrap">
-  {% block content %}
 
-  {% endblock %}
+<div class="mb-5">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top justify-content-center">
+        <div class="navbar-nav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'list' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
+<div class="container p-">
+    {% block content %}{% endblock %}
+</div>
 
-<footer id="footer">
-     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2023 Copyright:
-    <a class="text-reset fw-bold" href="https://tie-international.com/">Tie-International</a>
-  </div>
+<footer class="footer fixed-bottom">
+    <div class="text-center p-4" >
+        © 2023 Copyright:
+        <a class="text-reset fw-bold" href="https://tie-international.com/">Tie-International</a>
+    </div>
 </footer>
-   </div>
- </div>
+
 </body>
 </html>
