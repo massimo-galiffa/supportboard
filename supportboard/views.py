@@ -1,11 +1,11 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
 
-from supportboard.forms import SupportRequestForm
+from supportboard.forms import SupportRequestForm, SupportRequestTrainerForm
 from .models import SupportRequest
 
 
@@ -64,10 +64,19 @@ def update_support_request(request, pk):
     return render(request, 'supportboard/support_request.html', {'form': form})
 
 
-class group(View):
-    def get(self, request, *args, **kwargs):
-        form = SupportRequestForm()
-        return render(request, 'supportboard/support_request_detail.html', {'form': form})
+def support_request_group(request):
+    if request.method == 'POST':
+        form = SupportRequestTrainerForm(request.POST)
+        if form.is_valid():
+            if request.user.groups.filter(name='Berufsbildner').exists():
+                form.save()
+                return redirect('success')
+            else:
+                return HttpResponse("You are not authorized to make changes to the assigned trainer")
+    else:
+        form = SupportRequestTrainerForm()
+    return render(request, 'supportboard/support_request_detail.html', {'form': form})
+
 
 
 

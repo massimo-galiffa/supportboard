@@ -11,9 +11,37 @@
                     {% if error %}
                         <p class="error">{{ error }}</p>
                     {% endif %}
-                    <button type="submit" class="btn btn-primary btn-block">Send</button>
+
+{#                    <div class="dropdown mb-4">#}
+{#                        <button class="btn btn-secondary dropdown-toggle" type="button" id="colorDropdown"#}
+{#                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="flase">#}
+{#                            Wichtigkeit#}
+{#                        </button>#}
+{#                        <div class="dropdown-menu" aria-labelledby="colorDropdown">#}
+{#                            <a class="dropdown-item" href="#" onclick="changeColor('red')">Red</a>#}
+{#                            <a class="dropdown-item" href="#" onclick="changeColor('yellow')">Yellow</a>#}
+{#                            <a class="dropdown-item" href="#" onclick="changeColor('green')">Green</a>#}
+{##}
+{#                        </div>#}
+{#                    </div>#}
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="reset" class="btn btn-danger btn-block">Verwerfen</button>
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary btn-block">Send</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
+
     </div>
+    <script>
+        function changeColor(color) {
+            var container = document.querySelector('.container');
+            container.style.backgroundColor = color;
+        }
+    </script>
+
 {% endblock %}
