@@ -11,17 +11,19 @@
                         <label for="{{ form.title.id_for_label }}" class="text-light">Title</label>
                         <input id="{{ form.title.id_for_label }}" type="text" placeholder="Title"
                                name="{{ form.title.html_name }}" class="form-control" value="{{ form.title.value }}">
+
                     </div>
 
                     <div class="form-group">
-                        <label for="{{ form.description.id_for_label }}">Description</label>
+                        <label for="{{ form.description.id_for_label }}" class="text-light">Description</label>
                         <textarea id="{{ form.description.id_for_label }}" class="form-control"
                                   name="{{ form.description.html_name }}"
                                   rows="5">{{ form.description.value }}</textarea>
+
                     </div>
 
                     <div class="form-group">
-                        <label for="{{ form.assigned_trainer.id_for_label }}">Assigned Trainer</label>
+                        <label for="{{ form.assigned_trainer.id_for_label }}" class="text-light">Assigned Trainer</label>
                         <select id="{{ form.assigned_trainer.id_for_label }}"
                                 class="form-control {% if form.assigned_trainer.errors %}is-invalid{% endif %}"
                                 name="{{ form.assigned_trainer.html_name }}">
@@ -33,12 +35,12 @@
                             {% endfor %}
                         </select>
                         <div class="invalid-feedback text-light">
-                            hey
+                            Keine Trainer vorhanden ඞ
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="{{ form.importance.id_for_label }}">Importance</label>
+                        <label for="{{ form.importance.id_for_label }}" class="text-light">Importance</label>
                         <select id="{{ form.importance.id_for_label }}"
                                 class="form-control {% if form.importance.errors %}is-invalid{% endif %}"
                                 name="{{ form.importance.html_name }}">
@@ -48,10 +50,11 @@
                                 </option>
                             {% endfor %}
                         </select>
+
                     </div>
 
                     <div class="form-group">
-                        <label for="{{ form.status.id_for_label }}">Status</label>
+                        <label for="{{ form.status.id_for_label }}" class="text-light">Status</label>
                         <select id="{{ form.status.id_for_label }}"
                                 class="form-control {% if form.status.errors %}is-invalid{% endif %}"
                                 name="{{ form.status.html_name }}">
@@ -61,6 +64,7 @@
                                 </option>
                             {% endfor %}
                         </select>
+
                     </div>
 
                     <div class="row mt-3">
