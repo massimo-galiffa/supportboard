@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f78d139c-7d2c-4fda-8c9a-0816a7dcd8f8" name="Changes" comment="probleme behoben + Edit Content" />
+    <list default="true" id="f78d139c-7d2c-4fda-8c9a-0816a7dcd8f8" name="Changes" comment="probleme behoben + Edit Content">
+      <change afterPath="$PROJECT_DIR$/static/css/postcolorchange.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/tie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/javascript/postcolorchange.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support28/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d794412-ec54-4c31-9e39-acf743cd9026.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d794412-ec54-4c31-9e39-acf743cd9026.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/supportboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/supportboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/javascript/rainbow.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/javascript/rainbow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support28/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/support28/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supportboard/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supportboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supportboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/authy/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supportboard/support_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supportboard/support_request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supportboard/support_request_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supportboard/support_request_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supportboard/support_request_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supportboard/support_request_list.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,10 +36,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -44,16 +64,17 @@
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Git Projects\support28\static\images" />
       <recent name="C:\Git Projects\support28\static\css" />
       <recent name="C:\Git Projects\support28\static\javascript" />
       <recent name="C:\Git Projects\support28\static" />
       <recent name="C:\Git Projects\support28" />
-      <recent name="C:\Git Projects\support28\templates\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -105,6 +126,14 @@
       <workItem from="1674026800337" duration="21187000" />
       <workItem from="1674112899790" duration="22785000" />
       <workItem from="1674199427116" duration="11493000" />
+      <workItem from="1674554310077" duration="678000" />
+      <workItem from="1674587945716" duration="1360000" />
+      <workItem from="1674632601094" duration="11964000" />
+      <workItem from="1674715138810" duration="14715000" />
+      <workItem from="1674806261385" duration="8650000" />
+      <workItem from="1674824484688" duration="2658000" />
+      <workItem from="1675240037744" duration="19000" />
+      <workItem from="1675240065754" duration="15278000" />
     </task>
     <task id="LOCAL-00001" summary="Login + Basic SupportBoard">
       <created>1673348090785</created>
@@ -148,11 +177,29 @@
       <option name="project" value="LOCAL" />
       <updated>1674228107919</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="probleme behoben + Edit Content">
+      <created>1674554553530</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674554553530</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

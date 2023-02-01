@@ -2,29 +2,32 @@
 {% load static %}
 {% block content %}
 
-        <div class="row">
-            {% for i in support_requests %}
-                <div class="col-3 mt-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ i.title }}</h5>
-                            <p class="card-text">{{ i.description }}</p>
-                            <p class="card-text">{{ i.creation_date }}</p>
-                            <p class="card-text">{{ i.creator }}</p>
-                            <a href="{% url 'detail' i.id %}" class="btn mr-2">
-                                <i class="fas fa-expand icon-color rainbow-button"></i>
+    <div class="row">
+        {% for i in support_requests %}
+            <div class="col-3 mt-4">
+                <div class="card {{ i.status }} {% if i.importance == "Easy" %} bg-success {% elif i.importance == "Medium" %} bg-warning {% elif i.importance == "Difficult" %} bg-danger {% else %} {% endif %}">
+                    <div class="card-body post-content"  id="support-request-{{ i.id }}">
+                        <h5 class="card-title">{{ i.title }}</h5>
+                        <p class="card-text">{{ i.description }}</p>
+                        <p class="card-text">{{ i.creation_date }}</p>
+                        <p class="card-text">{{ i.creator }}</p>
+                        <a href="{% url 'detail' i.id %}" class="btn  mr-2">
+                            <i class="fas fa-expand icon-color rainbow-button"></i>
+                        </a>
+                        <a href="{% url 'detail' i.id %}" class="btn mr-2">
+                              <i class="fas fa-check-circle completed-icon"></i>
+                                <i class="fas fa-clock waiting-icon"></i>
                             </a>
-
-                        </div>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
+    </div>
 
 
-        <div style="position: absolute; bottom: 0; right: 3em;">
-            <a  href="{% url 'support'  %}" class="btn" ><i  class="fas fa-plus fa-3x mb-5 rainbow-button"></i></a>
-        </div>
+    <div style="position: absolute; bottom: 3em; right: 3em;">
+        <a href="{% url 'support' %}"  style="color: ivory" class="btn"><i class="fas fa-plus fa-3x mb-5 rainbow-button"></i></a>
+    </div>
 
 
 {% endblock %}

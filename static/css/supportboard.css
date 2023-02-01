@@ -7,5 +7,45 @@
     text-align: center;
 }
 .icon-color{
-  color: blue;
+  color: #000000;
 }
+.icon-color:hover{
+  color: rgb(80, 53, 133);
+}
+
+body:before {
+    content: "";
+    background-color: #131c2a;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+footer:before{
+    content: "";
+    background-color: #131c2a;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+nav:before{
+    content: "";
+    background-color: #131c2a;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.footer-text {
+    color: white;
+}
+
+
+

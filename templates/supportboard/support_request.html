@@ -1,30 +1,69 @@
 {% extends 'base.html' %}
-
 {% block content %}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-4 mx-auto">
-                <h1 class="text-center">Support Request</h1>
+                <h1 class="text-center mt-3" style="color: white">Support Request</h1>
                 <form method="post">
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    {% if error %}
-                        <p class="error">{{ error }}</p>
-                    {% endif %}
 
-{#                    <div class="dropdown mb-4">#}
-{#                        <button class="btn btn-secondary dropdown-toggle" type="button" id="colorDropdown"#}
-{#                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="flase">#}
-{#                            Wichtigkeit#}
-{#                        </button>#}
-{#                        <div class="dropdown-menu" aria-labelledby="colorDropdown">#}
-{#                            <a class="dropdown-item" href="#" onclick="changeColor('red')">Red</a>#}
-{#                            <a class="dropdown-item" href="#" onclick="changeColor('yellow')">Yellow</a>#}
-{#                            <a class="dropdown-item" href="#" onclick="changeColor('green')">Green</a>#}
-{##}
-{#                        </div>#}
-{#                    </div>#}
-                    <div class="row">
+                    <div class="form-group">
+                        <label for="{{ form.title.id_for_label }}" class="text-light">Title</label>
+                        <input id="{{ form.title.id_for_label }}" type="text" placeholder="Title"
+                               name="{{ form.title.html_name }}" class="form-control" value="{{ form.title.value }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.description.id_for_label }}">Description</label>
+                        <textarea id="{{ form.description.id_for_label }}" class="form-control"
+                                  name="{{ form.description.html_name }}"
+                                  rows="5">{{ form.description.value }}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.assigned_trainer.id_for_label }}">Assigned Trainer</label>
+                        <select id="{{ form.assigned_trainer.id_for_label }}"
+                                class="form-control {% if form.assigned_trainer.errors %}is-invalid{% endif %}"
+                                name="{{ form.assigned_trainer.html_name }}">
+                            {% for trainer in trainers %}
+                                <option value="{{ trainer.id }}"
+                                        {% if form.assigned_trainer.value == trainer.id %}selected{% endif %}>
+                                    {{ trainer.first_name }} {{ trainer.last_name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback text-light">
+                            hey
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.importance.id_for_label }}">Importance</label>
+                        <select id="{{ form.importance.id_for_label }}"
+                                class="form-control {% if form.importance.errors %}is-invalid{% endif %}"
+                                name="{{ form.importance.html_name }}">
+                            {% for ic in importance_choices %}
+                                <option value="{{ ic.0 }}" {% if form.importance.value == ic.0 %}selected{% endif %}>
+                                    {{ ic.0 }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.status.id_for_label }}">Status</label>
+                        <select id="{{ form.status.id_for_label }}"
+                                class="form-control {% if form.status.errors %}is-invalid{% endif %}"
+                                name="{{ form.status.html_name }}">
+                            {% for sc in status_choices %}
+                                <option value="{{ sc.0 }}" {% if form.status.value == sc.0 %}selected{% endif %}>
+                                    {{ sc.0 }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="row mt-3">
                         <div class="col-6">
                             <button type="reset" class="btn btn-danger btn-block">Verwerfen</button>
                         </div>
@@ -37,11 +76,5 @@
         </div>
 
     </div>
-    <script>
-        function changeColor(color) {
-            var container = document.querySelector('.container');
-            container.style.backgroundColor = color;
-        }
-    </script>
 
 {% endblock %}

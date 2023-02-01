@@ -1,8 +1,13 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
 
 
 class SupportRequest(models.Model):
+    IMPORTANCE_CHOICES = [
+        ('Easy', 'Easy'),
+        ('Medium', 'Medium'),
+        ('Difficult', 'Difficult'),
+    ]
     STATUS_CHOICES = [
         ('Active', 'Active'),
         ('Waiting', 'Waiting'),
@@ -14,6 +19,7 @@ class SupportRequest(models.Model):
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
     assigned_trainer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='assigned_trainer', null=True)
     status = models.CharField(max_length=254, choices=STATUS_CHOICES, default='Open')
+    importance = models.CharField(max_length=254, choices=IMPORTANCE_CHOICES, default='Easy')
 
     def __str__(self):
         return self.title

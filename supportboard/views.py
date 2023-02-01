@@ -1,9 +1,8 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.views import View
 
 from supportboard.forms import SupportRequestForm, SupportRequestTrainerForm
 from .models import SupportRequest
@@ -19,6 +18,8 @@ def support_request(request):
             support_request.creator = request.user
             support_request.save()
             return HttpResponseRedirect('list')
+        else:
+            print(form.errors)
     else:
         form = SupportRequestForm()
     return render(request, 'supportboard/support_request.html', {'form': form})
@@ -31,7 +32,6 @@ def support_request_list(request):
 
 
 def support_request_delete(request, id):
-    id = int(id)
     support_request = SupportRequest.objects.get(id=id)
     if support_request.creator == request.user or request.user.groups.filter(name='Berufsbildner').exists():
         support_request.delete()
@@ -53,15 +53,22 @@ def support_request_update(request, pk):
 
 
 def update_support_request(request, pk):
-    support_request = SupportRequest.objects.get(id=pk)
+    try:
+        support_request_object = SupportRequest.objects.get(id=pk)
+    except SupportRequest.DoesNotExist:
+        return redirect('list')
+    form = SupportRequestForm(instance=support_request_object)
     if request.method == 'POST':
-        form = SupportRequestForm(request.POST, instance=support_request)
+        form = SupportRequestForm(request.POST, instance=support_request_object)
         if form.is_valid():
             form.save()
             return redirect('list')
-    else:
-        form = SupportRequestForm(instance=support_request)
-    return render(request, 'supportboard/support_request.html', {'form': form})
+    return render(request, 'supportboard/support_request.html', {
+        'form': form,
+        'trainers': User.objects.filter(groups__name='Berufsbildner'),
+        'importance_choices': SupportRequest.IMPORTANCE_CHOICES,
+        'status_choices': SupportRequest.STATUS_CHOICES
+    })
 
 
 def support_request_group(request):
@@ -76,8 +83,3 @@ def support_request_group(request):
     else:
         form = SupportRequestTrainerForm()
     return render(request, 'supportboard/support_request_detail.html', {'form': form})
-
-
-
-
-
