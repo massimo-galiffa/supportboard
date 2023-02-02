@@ -10,20 +10,21 @@
                     <div class="form-group">
                         <label for="{{ form.title.id_for_label }}" class="text-light">Title</label>
                         <input id="{{ form.title.id_for_label }}" type="text" placeholder="Title"
-                               name="{{ form.title.html_name }}" class="form-control" value="{{ form.title.value }}">
-
+                               name="{{ form.title.html_name }}" class="form-control"
+                               value="{{ form.title.value|default:'' }}">
                     </div>
 
                     <div class="form-group">
                         <label for="{{ form.description.id_for_label }}" class="text-light">Description</label>
-                        <textarea id="{{ form.description.id_for_label }}" class="form-control"
+                        <textarea id="{{ form.description.id_for_label }}" class="form-control" placeholder=" short description"
                                   name="{{ form.description.html_name }}"
-                                  rows="5">{{ form.description.value }}</textarea>
-
+                                  rows="5">{% if form.description.value %}
+                            {{ form.description.value }}{% endif %}</textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="{{ form.assigned_trainer.id_for_label }}" class="text-light">Assigned Trainer</label>
+                        <label for="{{ form.assigned_trainer.id_for_label }}" class="text-light">Assigned
+                            Trainer</label>
                         <select id="{{ form.assigned_trainer.id_for_label }}"
                                 class="form-control {% if form.assigned_trainer.errors %}is-invalid{% endif %}"
                                 name="{{ form.assigned_trainer.html_name }}">

@@ -11,7 +11,10 @@ def signup(request):
         form = SignupForm(request.POST)
         if form.is_valid():
             user = User.objects.create_user(form.data["username"], form.data["email"], form.data["password"])
-            group = Group.objects.get(name=form.cleaned_data.get('group'))
+            group = Group.objects.get(name='Lernende')
+            print(group)
+            user.first_name = form.data["first_name"]
+            user.last_name = form.data["last_name"]
             user.groups.add(group)
             user.save()
             return redirect('login')
@@ -21,3 +24,4 @@ def signup(request):
 @login_required
 def home(request):
     return render(request, 'supportboard/support_request_list.html')
+

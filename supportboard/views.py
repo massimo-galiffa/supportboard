@@ -22,7 +22,12 @@ def support_request(request):
             print(form.errors)
     else:
         form = SupportRequestForm()
-    return render(request, 'supportboard/support_request.html', {'form': form})
+    return render(request, 'supportboard/support_request.html', {
+        'form': form,
+        'trainers': User.objects.filter(groups__name='Berufsbildner'),
+        'importance_choices': SupportRequest.IMPORTANCE_CHOICES,
+        'status_choices': SupportRequest.STATUS_CHOICES
+    })
 
 
 @login_required(login_url='/accounts/login')

@@ -10,7 +10,7 @@
   color: #000000;
 }
 .icon-color:hover{
-  color: rgb(80, 53, 133);
+  color: rgb(255, 255, 255);
 }
 
 body:before {
@@ -47,5 +47,8 @@ nav:before{
     color: white;
 }
 
-
+.navbar-nav {
+    width: 100%;
+    margin-bottom: 450px;
+}
 

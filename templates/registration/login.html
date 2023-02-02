@@ -4,17 +4,22 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-4 mx-auto">
-                <h1 class="text-center">Log In</h1>
+                <h1 class="text-center" style="color: white">Log in</h1>
                 <form method="post">
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    {% if error %}
-                        <p class="error">{{ error }}</p>
-                    {% endif %}
-                    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                    <div class="form-group">
+                        <input type="text" class="form-control mt-5" id="username" name="username" placeholder="Username">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control mt-3" id="password" name="password" placeholder="Password">
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary btn-block  mt-4">Log in</button>
                 </form>
             </div>
         </div>
     </div>
 {% endblock %}
-
