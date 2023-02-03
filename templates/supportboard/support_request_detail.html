@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <div class="col">
-                <div class="card mt-5 {% if i.importance == "Easy" %} bg-success {% elif i.importance == "Medium" %}  bg-warning {% elif i.importance == "Difficult" %} bg-danger {% else %}  {% endif %}" style="width: 80rem; align-content: center;">
+                <div class="card card-detail mt-5  {% if i.importance == "Easy" %} Green {% elif i.importance == "Medium" %}  bg-warning {% elif i.importance == "Difficult" %} bg-danger {% else %}  {% endif %}" style="width: 80rem; align-content: center;">
                     <div class="card-body">
                         <h5 class="card-title text-light"
                             style="text-align: center; font-size: x-large">{{ support_request.title }}</h5>

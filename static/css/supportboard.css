@@ -13,16 +13,7 @@
   color: rgb(255, 255, 255);
 }
 
-body:before {
-    content: "";
-    background-color: #131c2a;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
+
 footer:before{
     content: "";
     background-color: #131c2a;
@@ -51,4 +42,17 @@ nav:before{
     width: 100%;
     margin-bottom: 450px;
 }
+.card {
+  width: 300px;
+  height: 300px;
 
+}
+.success{
+  background-color: #38c754 !important;
+}
+.danger{
+  background-color: #e33731 !important;
+}
+.warning{
+  background-color: #ffed4a !important;
+}
