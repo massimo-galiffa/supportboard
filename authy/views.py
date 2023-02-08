@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User, Group
 from django.shortcuts import render, redirect
@@ -17,7 +18,9 @@ def signup(request):
             user.last_name = form.data["last_name"]
             user.groups.add(group)
             user.save()
+            messages.success(request, 'User created successfully')
             return redirect('login')
+        messages.error(request, 'Not valid')
     return render(request, 'authy/signup.html', {"form": form})
 
 

@@ -1,29 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row ">
+    <div class="row mt-4 mb-5">
         {% for i in support_requests %}
-            <div class="col-3 mt-4 ">
-                <div class="card  {{ i.status }} {% if i.importance == "Easy" %} success {% elif i.importance == "Medium" %} warning {% elif i.importance == "Difficult" %} danger {% else %} {% endif %}">
+            <div class="col-3 mb-3 mt-3">
+                <div class="card  {{ i.status }}{% if i.importance == "Easy" %} success {% elif i.importance == "Medium" %} warning {% elif i.importance == "Difficult" %} danger {% else %} {% endif %} {% if i.status == 'Done' %} done {%  endif %}">
                     <div class="card-body post-content" id="support-request-{{ i.id }}">
                         <h5 class="card-title">{{ i.title }}</h5>
                         <p class="card-text">{{ i.description }}</p>
                         <p class="card-text">{{ i.creation_date }}</p>
                         <p class="card-text">{{ i.creator }}</p>
-                        <div class="row">
-                            <span class="badge badge-pill badge-success">{{ i.status }}</span>
-                        <a href="{% url 'detail' i.id %}" class="btn mr-2">
-                            <i class="fas fa-expand icon-color "></i>
-                        </a>
-
-                        <a href="{% url 'detail' i.id %}" class="btn mr-2 ">
-                            <i class="fas fa-check-circle completed-icon"></i>
-                            <i class="fas fa-clock waiting-icon"></i>
-                        </a>
-
+                        <div class="grid">
+                            <div class="row">
+                                <div class="col-8 left">
+                                     <a href="{% url 'detail' i.id %}" class="btn mr-2">
+                                         <i class="fas fa-expand icon-color "></i>
+                                     </a>
+                                </div>
+                                <div class="col-4 center">
+                                    <a href="{% url 'update' i.id %}" class="btn mr-2">
+                                        {% if i.status == 'Waiting' %}
+                                            <i class="fas fa-clock waiting-icon"></i>
+                                        {%  elif i.status == 'Done' %}
+                                            <i class="fas fa-check-circle completed-icon"></i>
+                                        {% elif  i.status == 'Active' %}
+                                            <i class="fas fa-eye active-icon"></i>
+                                        {% endif %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
         {% endfor %}
     </div>

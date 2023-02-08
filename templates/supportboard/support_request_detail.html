@@ -3,16 +3,20 @@
     <div class="container ">
         <div class="row">
             <div class="col">
-                <div class="card card-detail mt-5  {% if i.importance == "Easy" %} Green {% elif i.importance == "Medium" %}  bg-warning {% elif i.importance == "Difficult" %} bg-danger {% else %}  {% endif %}" style="width: 80rem; align-content: center;">
+                <div class="card card-detail mt-5  {% if i.importance == "Easy" %} bg-success {% elif i.importance == "Medium" %}  bg-warning {% elif i.importance == "Difficult" %} bg-danger {% else %}  {% endif %}" style="width: 80rem; align-content: center;">
                     <div class="card-body">
-                        <h5 class="card-title text-light"
+                        <h5 class="card-title "
                             style="text-align: center; font-size: x-large">{{ support_request.title }}</h5>
                         <p class="card-text"
                            style="text-align: center; font-size: x-large">{{ support_request.description }}</p>
                         <p class="card-text"
+                           style="text-align: center; font-size: x-large">assigned trainer: {{ support_request.assigned_trainer }}</p>
+                        <p class="card-text"
+                            style="text-align: center; font-size: x-large">status: {{ support_request.status }}</p>
+                         <p class="card-text"
                            style="text-align: center; font-size: x-large">{{ support_request.creation_date }}</p>
                         <p class="card-text"
-                           style="text-align: center; font-size: x-large">{{ support_request.creator }}</p>
+                           style="text-align: center; font-size: x-large">created by: {{ support_request.creator }}</p>
                         <a href="{% url 'delete' support_request.id %}" class="btn mr-1 "
                            style="align-items: center"><i
                                 class="fas fa-trash-alt "></i></a>
