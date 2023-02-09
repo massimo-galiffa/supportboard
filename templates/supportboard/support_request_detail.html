@@ -3,12 +3,13 @@
     <div class="container ">
         <div class="row">
             <div class="col">
-                <div class="card card-detail mt-5  {% if i.importance == "Easy" %} bg-success {% elif i.importance == "Medium" %}  bg-warning {% elif i.importance == "Difficult" %} bg-danger {% else %}  {% endif %}" style="width: 80rem; align-content: center;">
-                    <div class="card-body">
-                        <h5 class="card-title "
+                <div class="card">
+                     <div class="card-body">
+                          <h5 class="card-title "
                             style="text-align: center; font-size: x-large">{{ support_request.title }}</h5>
+                         <p style="text-align: center; font-size: x-large">{{ support_request.description }}</p>
                         <p class="card-text"
-                           style="text-align: center; font-size: x-large">{{ support_request.description }}</p>
+                           style="text-align: center; font-size: x-large"></p>
                         <p class="card-text"
                            style="text-align: center; font-size: x-large">assigned trainer: {{ support_request.assigned_trainer }}</p>
                         <p class="card-text"
@@ -17,16 +18,16 @@
                            style="text-align: center; font-size: x-large">{{ support_request.creation_date }}</p>
                         <p class="card-text"
                            style="text-align: center; font-size: x-large">created by: {{ support_request.creator }}</p>
-                        <a href="{% url 'delete' support_request.id %}" class="btn mr-1 "
+                          <a  href="{% url 'delete' support_request.id %}" class="btn mr-1 card-text "
                            style="align-items: center"><i
                                 class="fas fa-trash-alt "></i></a>
-                        <a href="{% url 'update' support_request.id %}" class="btn "
+                        <a href="{% url 'update' support_request.id %}" class="btn card-text"
                            style="align-items: center"><i
                                 class="fas fa-pen "></i></a>
-                        <a href="{% url 'list' %}" class="btn float-right text-right "
+                        <a href="{% url 'list' %}" class="btn float-right text-right card-text"
                            style="align-items: center"><i
                                 class="fas fa-sync "></i></a>
-                    </div>
+                     </div>
                 </div>
             </div>
         </div>
@@ -38,6 +39,9 @@
     </div>
 {% endif %}
 
-
-
 {% endblock %}
+
+
+
+
+

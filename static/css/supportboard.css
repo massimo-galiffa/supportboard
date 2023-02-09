@@ -48,11 +48,18 @@ nav:before {
     margin-bottom: 450px;
 }
 
-.card {
+.card-sizing {
     width: 300px;
     height: 300px;
 
 }
+
+.card-detail-sizing {
+    width: 12vw;
+    height: 12vh;
+
+}
+
 
 .success {
     background-color: #90A959 !important;
