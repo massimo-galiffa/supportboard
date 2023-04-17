@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f78d139c-7d2c-4fda-8c9a-0816a7dcd8f8" name="Changes" comment="homepage fix + navbar styling (Finished Version)">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/supportboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/supportboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/supportboard/support_request_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supportboard/support_request_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support28/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/support28/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supportboard/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supportboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supportboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supportboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/messages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supportboard/support_request_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supportboard/support_request_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,21 +48,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Git Projects/support28/static/images&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Git Projects/support28/static/images",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Git Projects\support28\static\images" />
@@ -131,7 +144,10 @@
       <workItem from="1675772423394" duration="349000" />
       <workItem from="1675841500324" duration="6562000" />
       <workItem from="1675871513633" duration="349000" />
-      <workItem from="1675948817959" duration="1470000" />
+      <workItem from="1675948817959" duration="1968000" />
+      <workItem from="1676042123904" duration="82000" />
+      <workItem from="1676467048512" duration="4059000" />
+      <workItem from="1676554782737" duration="328000" />
     </task>
     <task id="LOCAL-00001" summary="Login + Basic SupportBoard">
       <created>1673348090785</created>
@@ -224,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675871855458</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="homepage fix + navbar styling (Finished Version)">
+      <created>1675953355803</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1675953355803</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -18,7 +18,7 @@ class SupportRequest(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
     assigned_trainer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='assigned_trainer', null=True)
-    status = models.CharField(max_length=254, choices=STATUS_CHOICES, default='Open')
+    status = models.CharField(max_length=254, choices=STATUS_CHOICES, default=STATUS_CHOICES[0])
     importance = models.CharField(max_length=254, choices=IMPORTANCE_CHOICES, default='Easy')
 
     def __str__(self):

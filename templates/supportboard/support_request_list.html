@@ -4,7 +4,7 @@
     <div class="row mt-4 mb-5">
         {% for i in support_requests %}
             <div class="col-3 mb-3 mt-3">
-                <div class="card  {{ i.status }}{% if i.importance == "Easy" %} success {% elif i.importance == "Medium" %} warning {% elif i.importance == "Difficult" %} danger {% else %} {% endif %} {% if i.status == 'Done' %} done {%  endif %}">
+                <div class="card {% if i.importance == "Easy" %} importance_easy {% elif i.importance == "Medium" %} warning {% elif i.importance == "Difficult" %} danger {% endif %} {% if i.status == 'Done' %} done {%  endif %}">
                     <div class="card-body post-content" id="support-request-{{ i.id }}">
                         <h5 class="card-title">{{ i.title }}</h5>
                         <p class="card-text">{{ i.description }}</p>
@@ -37,7 +37,7 @@
     </div>
 
 
-    <div style="position: fixed; bottom: 6em; right: 6em;">
+    <div class="sp_list_add_btn">
         <a href="{% url 'support' %}" style="color: ivory" class="btn"><i class="fas fa-plus fa-3x "></i></a>
     </div>
 
